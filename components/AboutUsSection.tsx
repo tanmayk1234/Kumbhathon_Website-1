@@ -76,27 +76,11 @@ export default function AboutUsSection() {
               <h2 className="text-2xl font-black text-stone-900 mb-6">{t('aboutUs.faqTitle')}</h2>
               
               <div className="space-y-6">
-                {/* FAQ 1 */}
-                <div>
-                  <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.faq1Q')}</h3>
-                  <p className="text-stone-600 text-sm">
-                    {t('aboutUs.faq1A')}
-                  </p>
-                </div>
-
                 {/* FAQ 2 */}
                 <div>
                   <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.faq2Q')}</h3>
                   <p className="text-stone-600 text-sm">
                     {t('aboutUs.faq2A')}
-                  </p>
-                </div>
-
-                {/* FAQ 3 */}
-                <div>
-                  <h3 className="font-bold text-stone-900 mb-2">{t('aboutUs.faq3Q')}</h3>
-                  <p className="text-stone-600 text-sm">
-                    {t('aboutUs.faq3A')}
                   </p>
                 </div>
 
