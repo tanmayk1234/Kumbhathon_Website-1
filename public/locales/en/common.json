@@ -45,7 +45,7 @@
     "emergencyContactName": "Emergency Contact Name",
     "emergencyContactNumber": "Emergency Contact Number",
     "medicalCondition": "Any Medical Condition?",
-    "consent": "I agree to the terms and conditions",
+    "consent": "I confirm that all information provided above is true, accurate, and complete to the best of my knowledge.",
     "submit": "Register",
     "success": "Registration successful! Thank you for your interest.",
     "error": "Registration failed. Please try again.",

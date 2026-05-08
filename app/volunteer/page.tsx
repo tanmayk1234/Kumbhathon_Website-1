@@ -27,7 +27,7 @@ export default function VolunteerRegistration() {
   })
 
   const [loading, setLoading] = useState(false)
-  const [success, setSuccess] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -45,7 +45,7 @@ export default function VolunteerRegistration() {
     e.preventDefault()
     setLoading(true)
     setError('')
-    setSuccess(false)
+    setShowModal(false)
 
     try {
       const response = await fetch('/api/volunteers', {
@@ -62,7 +62,7 @@ export default function VolunteerRegistration() {
       const data = await response.json()
 
       if (response.ok) {
-        setSuccess(true)
+        setShowModal(true)
         setFormData({
           fullName: '',
           email: '',
@@ -81,6 +81,7 @@ export default function VolunteerRegistration() {
           consentGiven: false
         })
         window.scrollTo({ top: 0, behavior: 'smooth' })
+
       } else {
         setError(data.error || 'Registration failed')
       }
@@ -94,7 +95,22 @@ export default function VolunteerRegistration() {
   return (
     <div className="volunteer-page">
       <SiteHeader />
-      
+
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-box" onClick={e => e.stopPropagation()}>
+            <div className="modal-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+            </div>
+            <h2>Registration Successful!</h2>
+            <p>Thank you for signing up to volunteer for Nashik Kumbh Mela 2027. We have received your details and will get in touch with you shortly.</p>
+            <button className="modal-close-btn" onClick={() => setShowModal(false)}>Done</button>
+          </div>
+        </div>
+      )}
+
       <div className="volunteer-hero" style={{ backgroundImage: "url('/Home_bg.png')" }}>
         <div className="hero-overlay"></div>
         <div className="hero-content">
@@ -105,15 +121,6 @@ export default function VolunteerRegistration() {
 
       <main className="volunteer-main" style={{ backgroundImage: "url('/Home_bg.png')" }}>
         <div className="form-container">
-          {success && (
-            <div className="success-alert">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-              </svg>
-              <span>{t('volunteer.success')}</span>
-            </div>
-          )}
-
           {error && (
             <div className="error-alert">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
