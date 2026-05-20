@@ -103,24 +103,24 @@ export default function HomePage() {
 
               {/* Main Description */}
               <p className="text-lg leading-8 text-stone-700 text-center">
-                The <span className="font-bold text-orange-700">Kumbh Mela</span> is a transcendent celebration where millions of pilgrims, saints, and seekers converge to take a sacred dip in the holy <span className="font-bold text-orange-700">Godavari River</span>. It is the world's largest peaceful gathering—a spiritual experience that transcends boundaries and unites humanity.
+                {t('home.kumbhDescription')}
               </p>
 
               {/* Two Column Stats */}
               <div className="grid gap-8 sm:grid-cols-2 py-4">
                 {/* Stat 1 */}
                 <div className="text-center">
-                  <div className="text-4xl font-black text-orange-600 mb-2">Every 12 Years</div>
+                  <div className="text-4xl font-black text-orange-600 mb-2">{t('home.every12YearsTitle')}</div>
                   <p className="text-stone-700 leading-relaxed">
-                    Held on the sacred banks of the Godavari River in Nashik, representing centuries of unbroken devotion, culture, and spiritual unity.
+                    {t('home.every12YearsDesc')}
                   </p>
                 </div>
 
                 {/* Stat 2 */}
                 <div className="text-center">
-                  <div className="text-4xl font-black text-orange-600 mb-2">Infinite Impact</div>
+                  <div className="text-4xl font-black text-orange-600 mb-2">{t('home.infiniteImpactTitle')}</div>
                   <p className="text-stone-700 leading-relaxed">
-                    Millions of visitors, countless traditions, and a transformative spiritual journey that shapes lives and preserves ancient wisdom.
+                    {t('home.infiniteImpactDesc')}
                   </p>
                 </div>
               </div>
@@ -131,26 +131,26 @@ export default function HomePage() {
               {/* Volunteers Section */}
               <div className="space-y-4 bg-linear-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border border-orange-100">
                 <h3 className="text-2xl font-black text-orange-800">
-                  Why Volunteers Matter
+                  {t('home.whyVolunteersMatterTitle')}
                 </h3>
                 <p className="text-base leading-7 text-stone-700">
-                  <span className="font-bold text-orange-700">Volunteers are the backbone</span> of this magnificent event. From crowd management and sanitation to medical support, security, and logistics—your service directly impacts millions and ensures this sacred celebration remains safe, organized, and spiritually fulfilling.
+                  {t('home.whyVolunteersMatterDesc')}
                 </p>
                 <p className="text-center italic text-stone-600 text-base pt-2 border-t border-orange-200">
-                  "Seva (selfless service) is the highest form of worship."
+                  {t('home.sevaQuote')}
                 </p>
               </div>
 
               {/* CTA */}
               <div className="text-center space-y-4">
                 <p className="text-lg leading-7 text-stone-700 font-medium">
-                  Join us in this extraordinary mission. Become a volunteer and be part of an incredible spiritual and cultural legacy that will resonate for generations to come.
+                  {t('home.joinMissionDesc')}
                 </p>
                 <Link
                   href="/volunteer"
                   className="inline-flex items-center justify-center rounded-full bg-orange-600 px-8 py-3 text-base font-bold text-white shadow-lg hover:bg-orange-700 transition-all duration-200 hover:shadow-xl"
                 >
-                  Start Volunteering Today
+                  {t('home.startVolunteering')}
                 </Link>
               </div>
             </div>

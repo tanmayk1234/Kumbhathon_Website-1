@@ -12,6 +12,9 @@ export default function AdminLogin() {
 
   // Check if already authenticated
   useEffect(() => {
+    // Prefetch dashboard so it compiles in the background during dev mode
+    router.prefetch('/admin/dashboard')
+    
     const checkAuth = async () => {
       try {
         const response = await fetch('/api/admin/check-auth')

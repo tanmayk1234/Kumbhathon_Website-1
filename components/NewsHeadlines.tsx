@@ -54,18 +54,18 @@ export default function NewsHeadlines() {
             {t('news.title')}
           </h2>
           <p className="text-stone-600">
-            Stay connected with the latest updates from the administration
+            {t('news.stayConnected')}
           </p>
         </div>
 
         {/* Headlines List */}
         {loading ? (
           <div className="text-center py-8">
-            <p className="text-stone-600">Loading headlines...</p>
+            <p className="text-stone-600">{t('news.loadingHeadlines')}</p>
           </div>
         ) : news.length === 0 ? (
           <div className="text-center py-8">
-            <p className="text-stone-600">No headlines available at the moment.</p>
+            <p className="text-stone-600">{t('news.noHeadlines')}</p>
           </div>
         ) : (
           <div className="space-y-3 mb-8">
@@ -91,7 +91,7 @@ export default function NewsHeadlines() {
                   item.urgency === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
                   'bg-blue-100 text-blue-700'
                 }`}>
-                  {item.urgency}
+                  {t('news.urgency.' + item.urgency) !== 'news.urgency.' + item.urgency ? t('news.urgency.' + item.urgency) : item.urgency}
                 </span>
               </div>
             ))}
@@ -104,7 +104,7 @@ export default function NewsHeadlines() {
             href="/news-and-alerts"
             className="inline-block px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded transition-colors text-sm"
           >
-            View All News & Alerts
+            {t('news.viewAllNewsAlerts')}
           </Link>
         </div>
       </div>

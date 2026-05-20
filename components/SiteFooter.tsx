@@ -18,11 +18,11 @@ export default function SiteFooter() {
               height={50}
               className="h-12 w-auto mb-2"
             />
-            <p className="text-sm text-amber-50/80">Coordinate, Serve, Celebrate.</p>
+            <p className="text-sm text-amber-50/80">{t('footer.tagline')}</p>
           </div>
 
           <div>
-            <div className="text-sm font-semibold tracking-wide text-amber-50/90">Quick links</div>
+            <div className="text-sm font-semibold tracking-wide text-amber-50/90">{t('footer.quickLinks')}</div>
             <div className="mt-3 space-y-2 text-sm">
               <Link className="block text-amber-50/80 hover:text-amber-50" href="/">
                 {t('header.home')}
@@ -43,19 +43,19 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <div className="text-sm font-semibold tracking-wide text-amber-50/90">Contact Details</div>
+            <div className="text-sm font-semibold tracking-wide text-amber-50/90">{t('footer.contactDetails')}</div>
             <div className="mt-3 space-y-2 text-sm text-amber-50/80">
               <div>
-                <div className="font-semibold text-amber-50/90">Phone</div>
+                <div className="font-semibold text-amber-50/90">{t('footer.phoneLabel')}</div>
                 <div>0253-2461909</div>
               </div>
               <div>
-                <div className="font-semibold text-amber-50/90">Email</div>
+                <div className="font-semibold text-amber-50/90">{t('footer.emailLabel')}</div>
                 <div>kumbhmela.2027@mah.gov.in</div>
               </div>
               <div>
-                <div className="font-semibold text-amber-50/90">Address</div>
-                <div className="text-xs">Nashik–Trimbakeshwar Kumbh Mela Authority (NTKMA)<br/>Office of the Divisional Commissioner, Nashik Division<br/>Nashik Road, Nashik, Maharashtra.</div>
+                <div className="font-semibold text-amber-50/90">{t('footer.addressLabel')}</div>
+                <div className="text-xs">{t('footer.addressLine1')}<br/>{t('footer.addressLine2')}<br/>{t('footer.addressLine3')}</div>
               </div>
             </div>
           </div>

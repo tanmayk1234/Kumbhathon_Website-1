@@ -1,5 +1,41 @@
 @import "tailwindcss";
 
+/* Theme Variables */
+:root {
+  --color-primary: #dc5f3c;
+  --color-primary-hover: #e67548;
+  --color-primary-dark: #c4481f;
+  
+  --color-text-main: #1a1a1a;
+  --color-text-secondary: #555555;
+  --color-text-muted: #78716c;
+  
+  --color-bg-main: #f8f9fa;
+  --color-bg-card: #ffffff;
+  --color-bg-soft: #fef9f5;
+  
+  --color-border: #d4af8f;
+  --color-border-light: #e5e5e5;
+  
+  --color-success-bg: #d4edda;
+  --color-success-border: #c3e6cb;
+  --color-success-text: #155724;
+  
+  --color-error-bg: #f8d7da;
+  --color-error-border: #f5c6cb;
+  --color-error-text: #721c24;
+}
+
+/* Accessibility: Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Hero background image */
 [data-bg-image="kumbh-hero"] {
   background-image: url('/Home_bg.png');
