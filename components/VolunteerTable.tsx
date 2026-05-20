@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import * as XLSX from 'xlsx'
 
 type Volunteer = {
   id: string
@@ -55,8 +56,8 @@ export default function VolunteerTable({ volunteers }: Props) {
     )
   }, [volunteers, searchTerm])
 
-  const handleExportCSV = () => {
-    // CSV headers
+  const handleExportExcel = () => {
+    // Excel headers
     const headers = [
       'Name',
       'Mobile',
@@ -76,7 +77,7 @@ export default function VolunteerTable({ volunteers }: Props) {
       'Registered Date'
     ]
 
-    // Convert data to CSV rows
+    // Convert data to rows
     const rows = filteredVolunteers.map(v => [
       v.fullName,
       v.mobileNumber,
@@ -96,24 +97,29 @@ export default function VolunteerTable({ volunteers }: Props) {
       formatDate(v.createdAt)
     ])
 
-    // Combine headers and rows
-    const csvContent = [
-      headers.join(','),
-      ...rows.map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(','))
-    ].join('\n')
+    // Create workbook and worksheet
+    const wb = XLSX.utils.book_new()
+    const wsData = [headers, ...rows]
+    const ws = XLSX.utils.aoa_to_sheet(wsData)
 
-    // Create and download the file
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
-    const link = document.createElement('a')
-    const url = URL.createObjectURL(blob)
+    // Auto-size columns
+    const colWidths = headers.map((_, colIndex) => {
+      let maxLength = headers[colIndex].length
+      rows.forEach(row => {
+        const cellValue = row[colIndex] ? String(row[colIndex]) : ''
+        if (cellValue.length > maxLength) {
+          maxLength = cellValue.length
+        }
+      })
+      // Add a little padding and cap max width
+      return { wch: Math.min(Math.max(maxLength + 2, 10), 50) }
+    })
+    ws['!cols'] = colWidths
+
+    XLSX.utils.book_append_sheet(wb, ws, "Volunteers")
     
-    link.setAttribute('href', url)
-    link.setAttribute('download', `kumbh-volunteers-${new Date().toISOString().split('T')[0]}.csv`)
-    link.style.visibility = 'hidden'
-    
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    // Download the file
+    XLSX.writeFile(wb, `kumbh-volunteers-${new Date().toISOString().split('T')[0]}.xlsx`)
   }
 
   return (
@@ -132,14 +138,14 @@ export default function VolunteerTable({ volunteers }: Props) {
             className="search-input"
           />
           <button
-            onClick={handleExportCSV}
+            onClick={handleExportExcel}
             className="export-button"
             disabled={filteredVolunteers.length === 0}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
             </svg>
-            Export CSV
+            Export Excel
           </button>
         </div>
       </div>
