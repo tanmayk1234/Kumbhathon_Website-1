@@ -58,12 +58,6 @@ export default function SiteHeader() {
           {/* Desktop controls */}
           <div className="hidden items-center gap-4 sm:flex">
             <LanguageSwitcher />
-            <Link
-              href="/volunteer"
-              className="inline-flex items-center rounded-full bg-orange-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
-            >
-              {t('header.volunteer')}
-            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -129,13 +123,6 @@ export default function SiteHeader() {
 
               <div className="mt-3 pt-3 border-t border-amber-200/40 space-y-3">
                 <LanguageSwitcher />
-                <Link
-                  href="/volunteer"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-orange-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 transition-colors"
-                  onClick={() => setOpen(false)}
-                >
-                  {t('header.volunteer')}
-                </Link>
               </div>
             </div>
           </div>

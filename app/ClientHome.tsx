@@ -70,12 +70,6 @@ export default function HomePage() {
               {/* CTA Buttons */}
               <div className="flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row sm:pt-4">
                 <Link
-                  href="/volunteer"
-                  className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-transparent transition-all duration-200 hover:shadow-xl hover:scale-105"
-                >
-                  {t('home.volunteerBtn')}
-                </Link>
-                <Link
                   href="/#about"
                   className="inline-flex items-center justify-center rounded-full border-2 border-white bg-white/10 px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent transition-all duration-200 backdrop-blur"
                 >
@@ -125,34 +119,6 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Divider */}
-              <div className="h-px bg-linear-to-r from-transparent via-orange-300 to-transparent" />
-
-              {/* Volunteers Section */}
-              <div className="space-y-4 bg-linear-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border border-orange-100">
-                <h3 className="text-2xl font-black text-orange-800">
-                  {t('home.whyVolunteersMatterTitle')}
-                </h3>
-                <p className="text-base leading-7 text-stone-700">
-                  {t('home.whyVolunteersMatterDesc')}
-                </p>
-                <p className="text-center italic text-stone-600 text-base pt-2 border-t border-orange-200">
-                  {t('home.sevaQuote')}
-                </p>
-              </div>
-
-              {/* CTA */}
-              <div className="text-center space-y-4">
-                <p className="text-lg leading-7 text-stone-700 font-medium">
-                  {t('home.joinMissionDesc')}
-                </p>
-                <Link
-                  href="/volunteer"
-                  className="inline-flex items-center justify-center rounded-full bg-orange-600 px-8 py-3 text-base font-bold text-white shadow-lg hover:bg-orange-700 transition-all duration-200 hover:shadow-xl"
-                >
-                  {t('home.startVolunteering')}
-                </Link>
-              </div>
             </div>
           </div>
         </section>
@@ -171,7 +137,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
-              {/* Card 1 - Volunteer Registration */}
+              {/* Card 1 */}
               <div className="group relative">
                 <div className="absolute inset-0 bg-linear-to-br from-orange-100 to-amber-100 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative rounded-2xl border border-stone-200 bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col">

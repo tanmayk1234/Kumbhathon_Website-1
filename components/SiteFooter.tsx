@@ -27,10 +27,7 @@ export default function SiteFooter() {
               <Link className="block text-amber-50/80 hover:text-amber-50" href="/">
                 {t('header.home')}
               </Link>
-              <Link className="block text-amber-50/80 hover:text-amber-50" href="/volunteer">
-                {t('header.volunteer')}
-              </Link>
-              <Link className="block text-amber-50/80 hover:text-amber-50" href="/about-us">
+<Link className="block text-amber-50/80 hover:text-amber-50" href="/about-us">
                 {t('header.aboutUs')}
               </Link>
               <Link className="block text-amber-50/80 hover:text-amber-50" href="/news-and-alerts">

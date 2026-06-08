@@ -7,7 +7,7 @@ import mrTranslations from '@/public/locales/mr/common.json'
 
 export const metadata: Metadata = {
   title: 'Kumbh Mela 2027',
-  description: 'Official portal for Nashik Kumbh Mela 2027 volunteer registration and updates.',
+  description: 'Official portal for Nashik Kumbh Mela 2027 — news, updates, and information.',
 }
 
 const translations = {

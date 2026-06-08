@@ -13,7 +13,7 @@ const LOCATIONS = [
   'South Entrance',
   'East Entrance',
   'West Entrance',
-  'Volunteer Center',
+  'Information Center',
   'Medical Station',
   'Registration Desk'
 ]
